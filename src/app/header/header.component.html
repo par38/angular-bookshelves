@@ -1,0 +1,31 @@
+<!-- <p>header works!</p> -->
+
+<nav class="navbar navbar-light bg-light justify-content-between">
+
+  <form class="form-inline">
+
+    <button routerLinkActive="active" class="btn btn-outline-success" type="button" routerLink="books">
+      Livres
+    </button>
+
+  </form>
+
+  <form class="form-inline">
+
+    <button routerLinkActive="active" class="btn btn-outline-primary " type="button" routerLink="auth/signin"
+      *ngIf="!isAuth">
+      Connexion
+    </button>
+
+    <button routerLinkActive="active" class="btn btn-outline-secondary  btn-sm" type="button" routerLink="auth/signup"
+      *ngIf="!isAuth">
+      Pas encore inscrit ?
+    </button>
+
+    <button (click)="onSignOut()" style="cursor:pointer" class="btn btn-outline-danger btn-sm" *ngIf="isAuth">
+      Déconnexion
+    </button>
+
+  </form>
+
+</nav>

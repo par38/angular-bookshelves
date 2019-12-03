@@ -1,0 +1,36 @@
+<!-- <p>signup works!</p> -->
+
+<h2>Créer un compte</h2>
+<br />
+<div class="row">
+
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+
+      <label for="email">Adresse email</label>
+
+      <input type="text" id="email" class="form-control" placeholder="mon-adresse@gmail.com" formControlName="email">
+
+    </div>
+
+
+    <div class="form-group">
+
+      <label for="text">Mot de passe</label>
+
+      <input type="text" id="password" class="form-control" formControlName="password" placeholder="M0nM0tD3Pass3"
+        ng-pattern="passwordRegex">
+
+      <small id="emailHelp" class="form-text text-muted">Lettres majuscules ou minuscules et/ou chiffres. Minimum 6
+        caractères</small>
+
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="signupForm.invalid">Créer un nouveau compte</button>
+
+  </form>
+
+  <p class="text-danger">{{ errorMessage }}</p>
+
+</div>
